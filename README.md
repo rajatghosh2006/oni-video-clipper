@@ -1,0 +1,136 @@
+# AI podcast clipper SaaS that auto transcribes audio files, uses AI to find the best 30 second viral hooks, automatically adds captions, exports vertical video for TikTok and YouTube Shorts. Three tier subscription: 19 dollars per month starter with 5 clips, 49 dollars per month pro with unlimited clips, 199 dollars per month agency with white label and API access. Production ready with payment processing, user dashboard, and analytics.
+
+**AI Podcast Clipper SaaS Documentation**
+==============================================
+
+**Introduction**
+---------------
+
+The AI Podcast Clipper SaaS is a revolutionary tool designed to help podcasters, content creators, and marketers maximize their reach and engagement on social media platforms. Our platform utilizes artificial intelligence to automatically transcribe audio files, identify the most engaging 30-second clips, add captions, and export vertical videos optimized for TikTok and YouTube Shorts.
+
+**Getting Started**
+-------------------
+
+### Signing Up
+
+To get started, simply visit our website and click on the "Sign Up" button. Fill out the registration form with your email address, password, and other required information. Verify your email address by clicking on the link sent to you by our system.
+
+### Subscription Tiers
+
+We offer three subscription tiers to cater to different needs and budgets:
+
+* **Starter**: $19/month (5 clips per month)
+* **Pro**: $49/month (unlimited clips)
+* **Agency**: $199/month (white label, API access, and unlimited clips)
+
+### Payment Processing
+
+Our platform uses a secure payment processing system to handle all transactions. You can upgrade or downgrade your subscription tier at any time, and changes will take effect immediately.
+
+**Using the AI Podcast Clipper SaaS**
+--------------------------------------
+
+### Uploading Audio Files
+
+To get started, upload your audio file to our platform. You can upload files in various formats, including MP3, WAV, and AAC.
+
+### Transcription and Clip Generation
+
+Our AI engine will automatically transcribe your audio file and identify the most engaging 30-second clips. You can review and edit the clips as needed.
+
+### Adding Captions and Exporting Vertical Videos
+
+Once you've selected your desired clips, our platform will add captions and export vertical videos optimized for TikTok and YouTube Shorts.
+
+### User Dashboard
+
+Our user-friendly dashboard allows you to manage your clips, view analytics, and access your subscription settings.
+
+**Features and Benefits**
+-------------------------
+
+* **AI-powered clip generation**: Our platform uses artificial intelligence to identify the most engaging 30-second clips from your audio file.
+* **Automatic transcription**: Our platform automatically transcribes your audio file, saving you time and effort.
+* **Captioning**: Our platform adds captions to your exported videos, making them more accessible and engaging.
+* **Vertical video export**: Our platform exports vertical videos optimized for TikTok and YouTube Shorts, helping you reach a wider audience.
+* **User dashboard**: Our dashboard provides a centralized location for managing your clips, viewing analytics, and accessing your subscription settings.
+* **Analytics**: Our platform provides detailed analytics on your clip performance, helping you refine your content strategy.
+
+**Subscription Tier Details**
+-----------------------------
+
+### Starter ($19/month)
+
+* 5 clips per month
+* Automatic transcription and clip generation
+* Captioning and vertical video export
+* User dashboard and analytics
+
+### Pro ($49/month)
+
+* Unlimited clips per month
+* Automatic transcription and clip generation
+* Captioning and vertical video export
+* User dashboard and analytics
+
+### Agency ($199/month)
+
+* Unlimited clips per month
+* White label solution (remove our branding and add your own)
+* API access for custom integration
+* User dashboard and analytics
+
+**FAQs**
+--------
+
+### Q: How do I upload my audio file?
+A: Simply click on the "Upload" button on our dashboard and select your audio file.
+
+### Q: How long does transcription and clip generation take?
+A: Transcription and clip generation typically take a few minutes, depending on the length of your audio file.
+
+### Q: Can I edit the captions and clips?
+A: Yes, you can review and edit the captions and clips as needed.
+
+### Q: What file formats do you support?
+A: We support MP3, WAV, and AAC file formats.
+
+### Q: Can I cancel my subscription at any time?
+A: Yes, you can cancel your subscription at any time, and changes will take effect immediately.
+
+**Troubleshooting Guide**
+-------------------------
+
+### Error Messages
+
+* **Upload failed**: Check that your file is in a supported format and that your internet connection is stable.
+* **Transcription failed**: Check that your audio file is clear and of good quality.
+
+### Common Issues
+
+* **Clips not generating**: Check that your audio file is long enough to generate clips.
+* **Captions not adding**: Check that your clips are in a supported format.
+
+**API Documentation**
+--------------------
+
+Our API allows developers to integrate our platform with their own applications. For more information, please contact our support team.
+
+**Terms of Service**
+-------------------
+
+By using our platform, you agree to our terms of service. Please review our terms of service carefully before using our platform.
+
+**Contact Us**
+--------------
+
+If you have any questions or need assistance, please don't hesitate to contact us. Our support team is available to help you with any issues or concerns you may have.
+
+**Changelog**
+-------------
+
+* Version 1.0: Initial release
+* Version 1.1: Added support for AAC file format
+* Version 1.2: Improved transcription accuracy and clip generation algorithm
+
+By using our platform, you acknowledge that you have read and understood our documentation, terms of service, and privacy policy.

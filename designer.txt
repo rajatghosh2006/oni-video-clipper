@@ -1,0 +1,335 @@
+**AI Podcast Clipper SaaS UI Design**
+
+**Overview**
+
+The AI Podcast Clipper SaaS is a web-based application that allows users to automatically transcribe audio files, find the best 30-second viral hooks using AI, add captions, and export vertical videos for TikTok and YouTube Shorts. The application has three-tier subscription plans: Starter, Pro, and Agency.
+
+**Color Scheme**
+
+* Primary Color: `#3498db`
+* Secondary Color: `#f1c40f`
+* Background Color: `#f9f9f9`
+* Text Color: `#333333`
+
+**Typography**
+
+* Font Family: Open Sans
+* Font Sizes:
+	+ Heading: 24px
+	+ Subheading: 18px
+	+ Body: 14px
+
+**Layout**
+
+The application will have a responsive design, with a minimum width of 320px and a maximum width of 1200px.
+
+**Header**
+
+The header will contain the application logo, navigation menu, and a call-to-action (CTA) button to sign up or log in.
+
+```html
+<header>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+  <button class="cta">Sign up for free</button>
+  <img src="logo.png" alt="Logo">
+</header>
+```
+
+```css
+header {
+  background-color: #f9f9f9;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333333;
+}
+
+header .cta {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+header .cta:hover {
+  background-color: #2980b9;
+}
+
+header img {
+  width: 100px;
+  height: 100px;
+  margin-left: 20px;
+}
+```
+
+**Hero Section**
+
+The hero section will contain a heading, subheading, and a CTA button.
+
+```html
+<section class="hero">
+  <h1>Automate your podcast clipping</h1>
+  <p>Get the most out of your podcast with our AI-powered clipper</p>
+  <button class="cta">Sign up for free</button>
+</section>
+```
+
+```css
+.hero {
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  padding: 100px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.hero .cta {
+  background-color: #f1c40f;
+  color: #333333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hero .cta:hover {
+  background-color: #e0c400;
+}
+```
+
+**Features Section**
+
+The features section will contain a list of features with icons and descriptions.
+
+```html
+<section class="features">
+  <h2>Features</h2>
+  <ul>
+    <li>
+      <i class="fas fa-microphone"></i>
+      <h3>Automatic Transcription</h3>
+      <p>Get accurate transcriptions of your podcast audio files</p>
+    </li>
+    <li>
+      <i class="fas fa-robot"></i>
+      <h3>AI-Powered Clipper</h3>
+      <p>Find the best 30-second viral hooks using our AI algorithm</p>
+    </li>
+    <li>
+      <i class="fas fa-closed-captioning"></i>
+      <h3>Automated Captions</h3>
+      <p>Add captions to your videos with ease</p>
+    </li>
+    <li>
+      <i class="fas fa-video"></i>
+      <h3>Vertical Video Export</h3>
+      <p>Export vertical videos for TikTok and YouTube Shorts</p>
+    </li>
+  </ul>
+</section>
+```
+
+```css
+.features {
+  padding: 50px;
+}
+
+.features h2 {
+  font-size: 24px;
+}
+
+.features ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.features li {
+  margin: 20px;
+  width: calc(25% - 20px);
+}
+
+.features i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.features h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.features p {
+  font-size: 14px;
+}
+```
+
+**Pricing Section**
+
+The pricing section will contain a list of pricing plans with features and a CTA button.
+
+```html
+<section class="pricing">
+  <h2>Pricing</h2>
+  <ul>
+    <li>
+      <h3>Starter</h3>
+      <p>$19/month</p>
+      <ul>
+        <li>5 clips per month</li>
+        <li>Automatic transcription</li>
+        <li>AI-powered clipper</li>
+      </ul>
+      <button class="cta">Sign up</button>
+    </li>
+    <li>
+      <h3>Pro</h3>
+      <p>$49/month</p>
+      <ul>
+        <li>Unlimited clips</li>
+        <li>Automatic transcription</li>
+        <li>AI-powered clipper</li>
+        <li>Automated captions</li>
+        <li>Vertical video export</li>
+      </ul>
+      <button class="cta">Sign up</button>
+    </li>
+    <li>
+      <h3>Agency</h3>
+      <p>$199/month</p>
+      <ul>
+        <li>Unlimited clips</li>
+        <li>Automatic transcription</li>
+        <li>AI-powered clipper</li>
+        <li>Automated captions</li>
+        <li>Vertical video export</li>
+        <li>White label</li>
+        <li>API access</li>
+      </ul>
+      <button class="cta">Sign up</button>
+    </li>
+  </ul>
+</section>
+```
+
+```css
+.pricing {
+  padding: 50px;
+}
+
+.pricing h2 {
+  font-size: 24px;
+}
+
+.pricing ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pricing li {
+  margin: 20px;
+  width: calc(33.33% - 20px);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.pricing h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.pricing p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.pricing ul ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pricing ul ul li {
+  margin-bottom: 10px;
+}
+
+.pricing .cta {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pricing .cta:hover {
+  background-color: #2980b9;
+}
+```
+
+**User Dashboard**
+
+The user dashboard will contain a list of clips, a button to upload new clips, and a section for analytics.
+
+```html
+<section class="dashboard">
+  <h2>Clips</h2>
+  <ul>
+    <li>
+      <h3>Clip 1</h3>
+      <p>Transcription: <span>Done</span></p>
+      <p>AI Clipper: <span>Done</span></p>
+      <p>Captions: <span>Done</span></p>
+      <p>Vertical Video Export: <span>Done</span></p>
+    </li>
+    <li>
+      <h3>Clip 2</h3>
+      <p>Transcription: <span>Pending</span></p>
+      <p>AI Clipper: <span>Pending</span></p>
+      <p>Captions: <span>Pending</span></p>
+      <p>Vertical Video Export: <span>Pending</span></p>
+    </li>
+  </ul>
+  <button class="cta">Upload new clip</button>
+  <section class="analytics">
+    <h3
