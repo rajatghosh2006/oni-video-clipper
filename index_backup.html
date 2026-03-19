@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClipAI — Turn Any Long Video Into Viral Clips</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#0a0a0a;color:#fff}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#0a0a0a;border-bottom:1px solid #222;position:sticky;top:0;z-index:100}
+.logo{font-size:24px;font-weight:800;background:linear-gradient(135deg,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links a{color:#ccc;text-decoration:none;margin-left:30px;font-size:15px}
+.nav-links a:hover{color:#fff}
+.btn{padding:10px 24px;border-radius:8px;border:none;cursor:pointer;font-size:15px;font-weight:600;transition:all 0.2s}
+.btn-primary{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff}
+.btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:#fff;border:1px solid #444;margin-right:10px}
+.btn-outline:hover{border-color:#6366f1;color:#6366f1}
+.hero{text-align:center;padding:120px 20px 100px;background:linear-gradient(180deg,#0a0a0a,#111)}
+.hero h1{font-size:60px;font-weight:800;line-height:1.1;margin-bottom:24px}
+.hero h1 span{background:linear-gradient(135deg,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:20px;color:#888;max-width:650px;margin:0 auto 48px;line-height:1.7}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#1a1a2e;color:#6366f1;padding:8px 20px;border-radius:20px;font-size:14px;margin-bottom:24px;border:1px solid #6366f1}
+.works-with{padding:40px 20px;background:#0f0f0f;text-align:center}
+.works-with p{color:#555;font-size:14px;margin-bottom:20px;text-transform:uppercase;letter-spacing:2px}
+.platforms{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
+.platform{color:#666;font-size:14px;font-weight:600;padding:8px 20px;border:1px solid #222;border-radius:20px}
+.features{padding:100px 40px;background:#0a0a0a}
+.section-title{text-align:center;font-size:40px;font-weight:800;margin-bottom:16px}
+.section-sub{text-align:center;color:#888;margin-bottom:70px;font-size:18px}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1200px;margin:0 auto}
+.feature-card{background:#111;border:1px solid #1e1e1e;border-radius:20px;padding:36px;transition:border-color 0.2s}
+.feature-card:hover{border-color:#6366f1}
+.feature-card .icon{font-size:40px;margin-bottom:20px}
+.feature-card h3{font-size:20px;margin-bottom:12px;font-weight:700}
+.feature-card p{color:#777;font-size:15px;line-height:1.7}
+.how-it-works{padding:100px 40px;background:#0f0f0f}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;max-width:1000px;margin:0 auto;text-align:center}
+.step .number{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;margin:0 auto 20px}
+.step h3{font-size:18px;margin-bottom:10px}
+.step p{color:#777;font-size:14px;line-height:1.6}
+.video-types{padding:80px 40px;background:#0a0a0a}
+.types-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;max-width:900px;margin:0 auto}
+.type-card{background:#111;border:1px solid #1e1e1e;border-radius:14px;padding:24px;text-align:center}
+.type-card .icon{font-size:32px;margin-bottom:12px}
+.type-card p{color:#ccc;font-size:14px;font-weight:600}
+.pricing{padding:100px 20px;background:#0f0f0f}
+.trial-banner{background:linear-gradient(135deg,#1a2a1a,#0f1f0f);border:1px solid #4ade80;border-radius:16px;padding:20px 40px;text-align:center;max-width:600px;margin:0 auto 60px;color:#4ade80;font-size:16px;font-weight:600}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+.plan{background:#111;border:1px solid #222;border-radius:24px;padding:40px 32px;position:relative;transition:transform 0.2s}
+.plan:hover{transform:translateY(-4px)}
+.plan.popular{border-color:#6366f1;background:#13131f}
+.popular-badge{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:6px 20px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap}
+.plan-name{font-size:14px;color:#888;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.plan .price{font-size:48px;font-weight:800;margin-bottom:4px}
+.plan .price span{font-size:18px;color:#888;font-weight:400}
+.plan .clips-badge{background:#1a1a2e;color:#6366f1;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;display:inline-block;margin-bottom:24px}
+.plan ul{list-style:none;margin-bottom:32px}
+.plan ul li{padding:10px 0;color:#bbb;font-size:14px;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;gap:10px}
+.plan ul li::before{content:"✓";color:#6366f1;font-weight:800;font-size:16px}
+.plan .btn{width:100%;padding:16px;font-size:16px;border-radius:12px}
+.testimonials{padding:100px 40px;background:#0a0a0a}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+.testimonial{background:#111;border:1px solid #1e1e1e;border-radius:20px;padding:32px}
+.stars{color:#f59e0b;font-size:18px;margin-bottom:16px}
+.testimonial p{color:#bbb;font-size:15px;line-height:1.7;margin-bottom:20px}
+.author{display:flex;align-items:center;gap:12px}
+.avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-weight:700}
+.author-info strong{display:block;font-size:14px}
+.author-info span{color:#666;font-size:13px}
+.faq{padding:100px 40px;background:#0f0f0f}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid #1e1e1e;padding:24px 0}
+.faq-item h4{font-size:17px;margin-bottom:12px;color:#fff}
+.faq-item p{color:#777;font-size:15px;line-height:1.6}
+.cta-section{text-align:center;padding:100px 20px;background:linear-gradient(135deg,#0d0d1a,#13131f)}
+.cta-section h2{font-size:48px;font-weight:800;margin-bottom:20px}
+.cta-section p{color:#888;margin-bottom:48px;font-size:18px;max-width:500px;margin-left:auto;margin-right:auto}
+footer{background:#0a0a0a;border-top:1px solid #1a1a1a;padding:60px 40px 40px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:40px;max-width:1100px;margin:0 auto 40px}
+.footer-brand .logo{font-size:22px;font-weight:800;background:linear-gradient(135deg,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+.footer-brand p{color:#555;font-size:14px;line-height:1.6}
+.footer-col h4{font-size:14px;font-weight:700;margin-bottom:16px;color:#fff;text-transform:uppercase;letter-spacing:1px}
+.footer-col a{display:block;color:#555;text-decoration:none;font-size:14px;margin-bottom:10px}
+.footer-col a:hover{color:#6366f1}
+.footer-bottom{text-align:center;color:#333;font-size:13px;border-top:1px solid #1a1a1a;padding-top:24px}
+@media(max-width:768px){.hero h1{font-size:38px}.nav-links{display:none}.hero-btns{flex-direction:column;align-items:center}.section-title{font-size:30px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">ClipAI</div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div>
+    <button class="btn btn-outline">Login</button>
+    <button class="btn btn-primary">Start Free Trial</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="badge">🔥 10x Faster Than Manual Editing</div>
+  <h1>Turn Any Long Video Into<br><span>Viral Short Clips</span></h1>
+  <p>AI automatically finds your best moments, adds perfect captions, and exports vertical video for TikTok, Reels & Shorts — in minutes, not hours.</p>
+  <div class="hero-btns">
+    <button class="btn btn-primary" style="font-size:18px;padding:18px 48px">Start Free — 3 Days Free Trial</button>
+    <button class="btn btn-outline" style="font-size:18px;padding:18px 48px">▶ Watch Demo</button>
+  </div>
+</section>
+
+<section class="works-with">
+  <p>Works with videos from</p>
+  <div class="platforms">
+    <div class="platform">🎙️ Podcasts</div>
+    <div class="platform">📺 YouTube</div>
+    <div class="platform">🎤 Interviews</div>
+    <div class="platform">📚 Lectures</div>
+    <div class="platform">💼 Webinars</div>
+    <div class="platform">🎬 Any MP4</div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="section-title">Everything You Need To Go Viral</div>
+  <div class="section-sub">One tool. Infinite clips. Zero editing skills required.</div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="icon">🎯</div>
+      <h3>AI Hook Finder</h3>
+      <p>Our AI watches your entire video and identifies the most engaging 30-90 second moments guaranteed to stop the scroll.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📝</div>
+      <h3>Perfect Auto Captions</h3>
+      <p>Word-by-word synchronized captions with custom fonts, colors, and styles. 50+ languages supported.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📱</div>
+      <h3>Vertical Video Export</h3>
+      <p>Perfectly framed 9:16 vertical clips ready for TikTok, Instagram Reels, YouTube Shorts, and more.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⚡</div>
+      <h3>Lightning Fast</h3>
+      <p>Get 10 clips from a 1-hour video in under 5 minutes. Faster than any human editor.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🎨</div>
+      <h3>Custom Branding</h3>
+      <p>Add your logo, brand colors, and custom templates to every clip automatically.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📊</div>
+      <h3>Performance Analytics</h3>
+      <p>Track which clips perform best. AI learns your style and improves recommendations over time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works" id="how-it-works">
+  <div class="section-title">How It Works</div>
+  <div class="section-sub">Three simple steps to viral content</div>
+  <div class="steps">
+    <div class="step">
+      <div class="number">1</div>
+      <h3>Upload Your Video</h3>
+      <p>Upload any long video or paste a YouTube URL. We support all major formats.</p>
+    </div>
+    <div class="step">
+      <div class="number">2</div>
+      <h3>AI Finds Best Moments</h3>
+      <p>Our AI analyzes your content and identifies the most viral-worthy clips automatically.</p>
+    </div>
+    <div class="step">
+      <div class="number">3</div>
+      <h3>Download & Post</h3>
+      <p>Download your clips with captions ready to post on any platform instantly.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="section-title">Simple, Transparent Pricing</div>
+  <div class="section-sub">Start free. No credit card required.</div>
+  <div class="trial-banner">🎁 3-Day Free Trial — Up to 7 Clips — No Credit Card Needed</div>
+  <div class="pricing-grid">
+    <div class="plan">
+      <div class="plan-name">Starter</div>
+      <div class="price">$19<span>/mo</span></div>
+      <div class="clips-badge">15 clips/month</div>
+      <ul>
+        <li>15 video clips per month</li>
+        <li>Auto captions</li>
+        <li>AI hook finder</li>
+        <li>Vertical export</li>
+        <li>Email support</li>
+      </ul>
+      <button class="btn btn-outline">Get Started</button>
+    </div>
+    <div class="plan popular">
+      <div class="popular-badge">⚡ MOST POPULAR</div>
+      <div class="plan-name">Pro</div>
+      <div class="price">$49<span>/mo</span></div>
+      <div class="clips-badge">35 clips/month</div>
+      <ul>
+        <li>35 video clips per month</li>
+        <li>Auto captions</li>
+        <li>AI hook finder</li>
+        <li>Vertical export</li>
+        <li>Priority support</li>
+        <li>Analytics dashboard</li>
+        <li>Custom branding</li>
+      </ul>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+    <div class="plan">
+      <div class="plan-name">Growth</div>
+      <div class="price">$79<span>/mo</span></div>
+      <div class="clips-badge">50 clips/month</div>
+      <ul>
+        <li>50 video clips per month</li>
+        <li>Auto captions</li>
+        <li>AI hook finder</li>
+        <li>Vertical export</li>
+        <li>Priority support</li>
+        <li>Advanced analytics</li>
+        <li>Team collaboration</li>
+        <li>Custom templates</li>
+      </ul>
+      <button class="btn btn-outline">Get Started</button>
+    </div>
+    <div class="plan">
+      <div class="plan-name">Agency</div>
+      <div class="price">$249<span>/mo</span></div>
+      <div class="clips-badge">Unlimited clips</div>
+      <ul>
+        <li>Unlimited clips</li>
+        <li>White label</li>
+        <li>API access</li>
+        <li>Unlimited team seats</li>
+        <li>Dedicated support</li>
+        <li>Custom integrations</li>
+        <li>SLA guarantee</li>
+        <li>Onboarding call</li>
+      </ul>
+      <button class="btn btn-outline">Contact Sales</button>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="section-title">Loved By Creators</div>
+  <div class="section-sub">Join thousands of creators growing faster with ClipAI</div>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"I used to spend 4 hours editing clips manually. Now ClipAI does it in 5 minutes. It's insane how good the AI is at finding the best moments."</p>
+      <div class="author">
+        <div class="avatar">S</div>
+        <div class="author-info"><strong>Sarah M.</strong><span>Podcast Host — 50K followers</span></div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"My YouTube channel grew 300% after I started posting clips made with ClipAI. The captions are perfect and it saves me so much time."</p>
+      <div class="author">
+        <div class="avatar">R</div>
+        <div class="author-info"><strong>Raj K.</strong><span>Tech YouTuber — 120K subscribers</span></div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"As a marketing agency we use ClipAI for all our clients. The white label feature is perfect and the quality is consistently professional."</p>
+      <div class="author">
+        <div class="avatar">A</div>
+        <div class="author-info"><strong>Alex T.</strong><span>Marketing Agency Owner</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="section-title">Frequently Asked Questions</div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h4>What types of videos does ClipAI support?</h4>
+      <p>ClipAI works with any long-form video including podcasts, YouTube videos, interviews, lectures, webinars, and any MP4 file. If it's longer than 5 minutes, we can clip it.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How accurate are the auto-captions?</h4>
+      <p>Our AI achieves 98%+ accuracy in English and supports 50+ languages. Captions are perfectly synchronized word by word.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Do I need a credit card for the free trial?</h4>
+      <p>No! Start your 3-day free trial with up to 7 clips completely free. No credit card required until you decide to upgrade.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can I cancel anytime?</h4>
+      <p>Yes, cancel anytime with no questions asked. Your subscription continues until the end of the billing period.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What platforms can I export to?</h4>
+      <p>Export vertical clips perfectly sized for TikTok, Instagram Reels, YouTube Shorts, Twitter/X, LinkedIn, and more.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready To Go Viral?</h2>
+  <p>Start your free trial today. No credit card required.</p>
+  <button class="btn btn-primary" style="font-size:20px;padding:20px 60px">Start Free Trial — 3 Days Free</button>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">ClipAI</div>
+      <p>Turn any long video into viral short clips with the power of AI.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#">Changelog</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#faq">FAQ</a>
+      <a href="#">Contact</a>
+      <a href="#">Documentation</a>
+      <a href="#">Status</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">GDPR</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 ClipAI. All rights reserved. Built with AI. Made for Creators.</div>
+</footer>
+
+</body>
+</html>
