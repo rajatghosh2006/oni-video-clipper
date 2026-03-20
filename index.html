@@ -64,7 +64,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:16px 4
 .orb-2{width:300px;height:300px;background:rgba(139,92,246,0.1);bottom:0;right:-50px}
 
 /* PLATFORMS */
-.platforms{padding:40px 40px;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
+.platforms{padding:40px 40px;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(99,102,241,0.1)}
 .platforms-inner{max-width:900px;margin:0 auto;text-align:center}
 .platforms p{color:#333;font-size:12px;text-transform:uppercase;letter-spacing:3px;margin-bottom:24px}
 .platform-tags{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -132,7 +132,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:16px 4
 /* FAQ */
 .faq{padding:120px 40px;background:#050508}
 .faq-list{max-width:680px;margin:0 auto}
-.faq-item{border-bottom:1px solid rgba(255,255,255,0.05);padding:28px 0}
+.faq-item{border-bottom:1px solid rgba(99,102,241,0.1);padding:28px 0}
 .faq-item h4{font-size:16px;font-weight:600;margin-bottom:12px;color:#e0e0e0}
 .faq-item p{color:#555;font-size:14px;line-height:1.7}
 
@@ -169,20 +169,24 @@ footer{background:#030305;border-top:1px solid rgba(255,255,255,0.05);padding:80
 <nav>
   <a href="/" class="logo-container">
     <div class="logo-icon">
-      <svg viewBox="0 0 60 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 12px rgba(99,102,241,0.8))">
+      <svg viewBox="0 0 70 55" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 14px rgba(99,102,241,0.9));animation:float 3s ease-in-out infinite">
   <defs>
     <linearGradient id="czg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#7c3aed"/>
-      <stop offset="40%" style="stop-color:#6366f1"/>
+      <stop offset="35%" style="stop-color:#6366f1"/>
       <stop offset="70%" style="stop-color:#22d3ee"/>
       <stop offset="100%" style="stop-color:#06b6d4"/>
     </linearGradient>
   </defs>
-  <path d="M42 8 C28 8 16 16 16 25 C16 34 28 42 42 42" stroke="url(#czg)" stroke-width="5" stroke-linecap="round" fill="none"/>
-  <path d="M24 8 L48 8 L24 42 L48 42" stroke="url(#czg)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- C shape - curved arc -->
+  <path d="M46 8 C28 6 12 14 12 27.5 C12 41 28 49 46 47" stroke="url(#czg)" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+  <!-- Z shape - top horizontal, diagonal, bottom horizontal -->
+  <path d="M26 8 L54 8" stroke="url(#czg)" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M54 8 L26 47" stroke="url(#czg)" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M26 47 L54 47" stroke="url(#czg)" stroke-width="5.5" stroke-linecap="round"/>
 </svg>
     </div>
-    <span class="logo-text">ClipZen<span> AI</span></span>
+    <span style="font-size:22px;font-weight:800;background:linear-gradient(135deg,#8b5cf6,#6366f1,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px">ClipZen <span style="background:linear-gradient(135deg,#22d3ee,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">AI</span></span>
   </a>
   <div class="nav-links">
     <a href="#features">Features</a>
@@ -192,10 +196,10 @@ footer{background:#030305;border-top:1px solid rgba(255,255,255,0.05);padding:80
   </div>
   <div class="nav-right"></div>
 </nav>
-<div style="display:flex;align-items:center;justify-content:center;gap:16px;padding:16px 20px;background:rgba(5,5,8,0.95);border-bottom:1px solid rgba(99,102,241,0.1)">
-  <button style="background:rgba(99,102,241,0.15);color:#fff;border:none;padding:12px 40px;border-radius:100px;font-size:16px;font-weight:700;cursor:pointer;font-family:Inter,sans-serif;backdrop-filter:blur(10px)">Sign Up</button>
-  <span style="color:#6366f1;font-size:28px;font-weight:200">/</span>
-  <button style="background:rgba(99,102,241,0.15);color:#fff;border:none;padding:12px 40px;border-radius:100px;font-size:16px;font-weight:700;cursor:pointer;font-family:Inter,sans-serif;backdrop-filter:blur(10px)">Login</button>
+<div style="display:flex;align-items:center;justify-content:center;gap:20px;padding:14px 20px;background:transparent">
+  <button style="background:rgba(99,102,241,0.15);color:#a78bfa;border:1px solid rgba(99,102,241,0.3);padding:12px 36px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:Inter,sans-serif;white-space:nowrap;transition:all 0.2s">Sign Up</button>
+  <span style="color:#6366f1;font-size:24px;font-weight:200">/</span>
+  <button style="background:rgba(99,102,241,0.15);color:#a78bfa;border:1px solid rgba(99,102,241,0.3);padding:12px 36px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:Inter,sans-serif;white-space:nowrap;transition:all 0.2s">Login</button>
 </div>
 <!-- Sticky CTA -->
 <div id="sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#6366f1,#8b5cf6);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;z-index:999;transform:translateY(100%);transition:transform 0.3s ease;box-shadow:0 -4px 30px rgba(99,102,241,0.4)">
@@ -465,7 +469,7 @@ window.addEventListener('scroll',function(){
             <path d="M30 12 L31.5 13.5 L34 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <span class="logo-text">ClipZen<span> AI</span></span>
+        <span style="font-size:22px;font-weight:800;background:linear-gradient(135deg,#8b5cf6,#6366f1,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px">ClipZen <span style="background:linear-gradient(135deg,#22d3ee,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">AI</span></span>
       </a>
       <p>Turn any long video into viral short clips with the power of AI. Built for creators, podcasters, and agencies.</p>
     </div>
