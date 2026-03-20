@@ -169,17 +169,19 @@ footer{background:#030305;border-top:1px solid rgba(255,255,255,0.05);padding:80
 <nav>
   <a href="/" class="logo-container">
     <div class="logo-icon">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#6366f1"/>
-            <stop offset="100%" style="stop-color:#8b5cf6"/>
-          </linearGradient>
-        </defs>
-        <rect width="40" height="40" rx="12" fill="url(#lg1)"/>
-        <text x="4" y="28" font-family="Inter,Arial" font-weight="900" font-size="22" fill="white" opacity="0.9">C</text>
-        <text x="18" y="28" font-family="Inter,Arial" font-weight="900" font-size="22" fill="white" opacity="0.5">Z</text>
-      </svg>
+      <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(99,102,241,0.6))">
+  <defs>
+    <linearGradient id="czgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="50%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <!-- C shape -->
+  <path d="M32 10 C20 10 12 17 12 25 C12 33 20 40 32 40" stroke="url(#czgrad)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <!-- Z shape -->
+  <path d="M22 10 L38 10 L22 40 L38 40" stroke="url(#czgrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
     </div>
     <span class="logo-text">ClipZen<span> AI</span></span>
   </a>
@@ -189,9 +191,10 @@ footer{background:#030305;border-top:1px solid rgba(255,255,255,0.05);padding:80
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
   </div>
-  <div class="nav-right">
-    <button class="btn btn-ghost">Login</button>
-    <button class="btn btn-primary">Start Free Trial</button>
+  <div class="nav-right" style="display:flex;align-items:center;gap:0">
+    <button class="btn btn-ghost" style="border-radius:100px;padding:10px 24px;font-size:14px">Sign Up</button>
+    <span style="color:#333;font-size:20px;font-weight:300;margin:0 2px">/</span>
+    <button class="btn btn-ghost" style="border-radius:100px;padding:10px 24px;font-size:14px">Login</button>
   </div>
 </nav>
 <!-- Sticky CTA -->
@@ -209,6 +212,12 @@ window.addEventListener('scroll',function(){
 
 <section class="hero">
   <div class="hero-bg"></div>
+  <style>
+  @keyframes spin3d{0%{transform:perspective(400px) rotateY(-15deg) rotateX(5deg)}50%{transform:perspective(400px) rotateY(15deg) rotateX(-5deg)}100%{transform:perspective(400px) rotateY(-15deg) rotateX(5deg)}}
+  @keyframes zoomOut{from{transform:scale(1.15)}to{transform:scale(1)}}
+  .hero{animation:zoomOut 1.2s ease forwards}
+  .logo-icon svg{animation:float 3s ease-in-out infinite,spin3d 8s ease-in-out infinite!important}
+  </style>
   <div class="hero-bg-2"></div>
   <div class="grid-bg"></div>
   <div class="orb orb-1"></div>
