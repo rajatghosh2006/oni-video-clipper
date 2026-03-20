@@ -3,357 +3,371 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ClipAI — Turn Any Long Video Into Viral Clips</title>
+<title>ClipZen AI — Turn Any Long Video Into Viral Clips</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',sans-serif;background:#0a0a0a;color:#fff}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#0a0a0a;border-bottom:1px solid #222;position:sticky;top:0;z-index:100}
-.logo{font-size:24px;font-weight:800;background:linear-gradient(135deg,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-links a{color:#ccc;text-decoration:none;margin-left:30px;font-size:15px}
+body{font-family:'Inter',sans-serif;background:#060612;color:#fff;overflow-x:hidden}
+@keyframes drawLogo{from{stroke-dashoffset:800}to{stroke-dashoffset:0}}
+@keyndef float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes glow{0%,100%{box-shadow:0 0 20px rgba(108,43,255,0.3)}50%{box-shadow:0 0 50px rgba(46,230,166,0.5)}}
+@keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+.logo-svg{animation:float 3s ease-in-out infinite}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 40px;background:rgba(6,6,18,0.9);border-bottom:1px solid rgba(108,43,255,0.15);position:sticky;top:0;z-index:1000;backdrop-filter:blur(20px)}
+.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:900;background:linear-gradient(135deg,#6C2BFF,#6366f1,#2EE6A6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{color:#666;text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
 .nav-links a:hover{color:#fff}
-.btn{padding:10px 24px;border-radius:8px;border:none;cursor:pointer;font-size:15px;font-weight:600;transition:all 0.2s}
-.btn-primary{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff}
-.btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
-.btn-outline{background:transparent;color:#fff;border:1px solid #444;margin-right:10px}
-.btn-outline:hover{border-color:#6366f1;color:#6366f1}
-.hero{text-align:center;padding:120px 20px 100px;background:linear-gradient(180deg,#0a0a0a,#111)}
-.hero h1{font-size:60px;font-weight:800;line-height:1.1;margin-bottom:24px}
-.hero h1 span{background:linear-gradient(135deg,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:20px;color:#888;max-width:650px;margin:0 auto 48px;line-height:1.7}
-.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.badge{display:inline-block;background:#1a1a2e;color:#6366f1;padding:8px 20px;border-radius:20px;font-size:14px;margin-bottom:24px;border:1px solid #6366f1}
-.works-with{padding:40px 20px;background:#0f0f0f;text-align:center}
-.works-with p{color:#555;font-size:14px;margin-bottom:20px;text-transform:uppercase;letter-spacing:2px}
-.platforms{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
-.platform{color:#666;font-size:14px;font-weight:600;padding:8px 20px;border:1px solid #222;border-radius:20px}
-.features{padding:100px 40px;background:#0a0a0a}
-.section-title{text-align:center;font-size:40px;font-weight:800;margin-bottom:16px}
-.section-sub{text-align:center;color:#888;margin-bottom:70px;font-size:18px}
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1200px;margin:0 auto}
-.feature-card{background:#111;border:1px solid #1e1e1e;border-radius:20px;padding:36px;transition:border-color 0.2s}
-.feature-card:hover{border-color:#6366f1}
-.feature-card .icon{font-size:40px;margin-bottom:20px}
-.feature-card h3{font-size:20px;margin-bottom:12px;font-weight:700}
-.feature-card p{color:#777;font-size:15px;line-height:1.7}
-.how-it-works{padding:100px 40px;background:#0f0f0f}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;max-width:1000px;margin:0 auto;text-align:center}
-.step .number{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;margin:0 auto 20px}
-.step h3{font-size:18px;margin-bottom:10px}
-.step p{color:#777;font-size:14px;line-height:1.6}
-.video-types{padding:80px 40px;background:#0a0a0a}
-.types-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;max-width:900px;margin:0 auto}
-.type-card{background:#111;border:1px solid #1e1e1e;border-radius:14px;padding:24px;text-align:center}
-.type-card .icon{font-size:32px;margin-bottom:12px}
-.type-card p{color:#ccc;font-size:14px;font-weight:600}
-.pricing{padding:100px 20px;background:#0f0f0f}
-.trial-banner{background:linear-gradient(135deg,#1a2a1a,#0f1f0f);border:1px solid #4ade80;border-radius:16px;padding:20px 40px;text-align:center;max-width:600px;margin:0 auto 60px;color:#4ade80;font-size:16px;font-weight:600}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1100px;margin:0 auto}
-.plan{background:#111;border:1px solid #222;border-radius:24px;padding:40px 32px;position:relative;transition:transform 0.2s}
+.nav-btns{display:flex;align-items:center;gap:10px}
+.btn-signup{background:transparent;color:#a78bfa;border:1.5px solid rgba(108,43,255,0.5);padding:9px 24px;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;white-space:nowrap}
+.btn-signup:hover{background:rgba(108,43,255,0.1);border-color:#6C2BFF}
+.btn-login{background:transparent;color:#a78bfa;border:1.5px solid rgba(108,43,255,0.5);padding:9px 24px;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;white-space:nowrap}
+.btn-login:hover{background:rgba(108,43,255,0.1)}
+.slash{color:#6C2BFF;font-size:18px;font-weight:200}
+
+.hero{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px;position:relative;overflow:hidden;background:linear-gradient(180deg,#060612,#0a0820)}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(108,43,255,0.15),transparent);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(108,43,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(108,43,255,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(108,43,255,0.1);color:#a78bfa;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;border:1px solid rgba(108,43,255,0.3);margin-bottom:32px;animation:fadeUp 0.6s ease forwards}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:#6C2BFF;animation:glow 1.5s ease infinite}
+.hero h1{font-family:'Syne',sans-serif;font-size:60px;font-weight:900;line-height:1.05;margin-bottom:24px;animation:fadeUp 0.6s ease 0.1s both;letter-spacing:-2px}
+.hero h1 .grad{background:linear-gradient(135deg,#6C2BFF,#6366f1,#2EE6A6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 200%;animation:gradShift 4s ease infinite}
+.hero p{font-size:18px;color:#555;max-width:580px;margin:0 auto 48px;line-height:1.8;animation:fadeUp 0.6s ease 0.2s both}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.6s ease 0.3s both}
+.btn-main{background:linear-gradient(135deg,#6C2BFF,#2EE6A6);color:#fff;border:none;padding:16px 40px;border-radius:100px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;animation:glow 3s ease infinite}
+.btn-main:hover{transform:translateY(-2px);opacity:0.9}
+.btn-watch{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.15);padding:16px 40px;border-radius:100px;font-size:16px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s}
+.btn-watch:hover{border-color:rgba(108,43,255,0.5)}
+.hero-stats{display:flex;gap:60px;justify-content:center;margin-top:70px;animation:fadeUp 0.6s ease 0.4s both;flex-wrap:wrap}
+.stat .num{font-family:'Syne',sans-serif;font-size:30px;font-weight:900;background:linear-gradient(135deg,#fff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat .lbl{color:#444;font-size:13px;margin-top:4px}
+
+.platforms{padding:36px 40px;border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);background:#060612}
+.platforms p{color:#333;font-size:11px;text-transform:uppercase;letter-spacing:3px;text-align:center;margin-bottom:20px}
+.ptags{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.ptag{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);color:#444;padding:9px 20px;border-radius:100px;font-size:13px;font-weight:500;transition:all 0.2s}
+.ptag:hover{border-color:rgba(108,43,255,0.4);color:#a78bfa}
+
+.section{padding:100px 40px;background:#060612}
+.section.alt{background:#080816}
+.sec-label{color:#6C2BFF;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:3px;text-align:center;margin-bottom:14px}
+.sec-title{font-family:'Syne',sans-serif;font-size:40px;font-weight:900;text-align:center;letter-spacing:-1.5px;margin-bottom:14px}
+.sec-sub{color:#444;font-size:17px;text-align:center;max-width:500px;margin:0 auto 70px;line-height:1.7}
+
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1100px;margin:0 auto}
+.feat-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:20px;padding:32px;transition:all 0.3s}
+.feat-card:hover{border-color:rgba(108,43,255,0.3);transform:translateY(-4px)}
+.feat-icon{font-size:36px;margin-bottom:18px}
+.feat-card h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin-bottom:10px}
+.feat-card p{color:#444;font-size:14px;line-height:1.7}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;max-width:900px;margin:0 auto;text-align:center}
+.step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#6C2BFF,#2EE6A6);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:20px;font-weight:900;margin:0 auto 20px;animation:glow 3s ease infinite}
+.step h3{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;margin-bottom:10px}
+.step p{color:#444;font-size:14px;line-height:1.6}
+
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:1100px;margin:0 auto}
+.plan{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:24px;padding:36px 28px;position:relative;transition:all 0.3s}
 .plan:hover{transform:translateY(-4px)}
-.plan.popular{border-color:#6366f1;background:#13131f}
-.popular-badge{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:6px 20px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap}
-.plan-name{font-size:14px;color:#888;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
-.plan .price{font-size:48px;font-weight:800;margin-bottom:4px}
-.plan .price span{font-size:18px;color:#888;font-weight:400}
-.plan .clips-badge{background:#1a1a2e;color:#6366f1;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;display:inline-block;margin-bottom:24px}
-.plan ul{list-style:none;margin-bottom:32px}
-.plan ul li{padding:10px 0;color:#bbb;font-size:14px;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;gap:10px}
-.plan ul li::before{content:"✓";color:#6366f1;font-weight:800;font-size:16px}
-.plan .btn{width:100%;padding:16px;font-size:16px;border-radius:12px}
-.testimonials{padding:100px 40px;background:#0a0a0a}
-.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto}
-.testimonial{background:#111;border:1px solid #1e1e1e;border-radius:20px;padding:32px}
-.stars{color:#f59e0b;font-size:18px;margin-bottom:16px}
-.testimonial p{color:#bbb;font-size:15px;line-height:1.7;margin-bottom:20px}
-.author{display:flex;align-items:center;gap:12px}
-.avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-weight:700}
-.author-info strong{display:block;font-size:14px}
-.author-info span{color:#666;font-size:13px}
-.faq{padding:100px 40px;background:#0f0f0f}
-.faq-list{max-width:700px;margin:0 auto}
-.faq-item{border-bottom:1px solid #1e1e1e;padding:24px 0}
-.faq-item h4{font-size:17px;margin-bottom:12px;color:#fff}
-.faq-item p{color:#777;font-size:15px;line-height:1.6}
-.cta-section{text-align:center;padding:100px 20px;background:linear-gradient(135deg,#0d0d1a,#13131f)}
-.cta-section h2{font-size:48px;font-weight:800;margin-bottom:20px}
-.cta-section p{color:#888;margin-bottom:48px;font-size:18px;max-width:500px;margin-left:auto;margin-right:auto}
-footer{background:#0a0a0a;border-top:1px solid #1a1a1a;padding:60px 40px 40px}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:40px;max-width:1100px;margin:0 auto 40px}
-.footer-brand .logo{font-size:22px;font-weight:800;background:linear-gradient(135deg,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
-.footer-brand p{color:#555;font-size:14px;line-height:1.6}
-.footer-col h4{font-size:14px;font-weight:700;margin-bottom:16px;color:#fff;text-transform:uppercase;letter-spacing:1px}
-.footer-col a{display:block;color:#555;text-decoration:none;font-size:14px;margin-bottom:10px}
-.footer-col a:hover{color:#6366f1}
-.footer-bottom{text-align:center;color:#333;font-size:13px;border-top:1px solid #1a1a1a;padding-top:24px}
-@media(max-width:768px){.hero h1{font-size:38px}.nav-links{display:none}.hero-btns{flex-direction:column;align-items:center}.section-title{font-size:30px}}
+.plan.hot{border-color:rgba(108,43,255,0.5);background:linear-gradient(135deg,rgba(108,43,255,0.08),rgba(46,230,166,0.04))}
+.hot-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#6C2BFF,#2EE6A6);color:#fff;padding:5px 18px;border-radius:100px;font-size:11px;font-weight:800;white-space:nowrap;letter-spacing:1px}
+.plan-tier{font-size:11px;color:#444;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
+.plan-price{font-family:'Syne',sans-serif;font-size:48px;font-weight:900;letter-spacing:-2px;line-height:1;margin-bottom:4px}
+.plan-price span{font-size:16px;color:#444;font-weight:400;letter-spacing:0;font-family:'Inter',sans-serif}
+.plan-clips{display:inline-block;background:rgba(108,43,255,0.1);color:#a78bfa;padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600;margin-bottom:6px;border:1px solid rgba(108,43,255,0.2)}
+.plan-templates{display:inline-block;background:rgba(46,230,166,0.08);color:#2EE6A6;padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600;margin-bottom:24px;border:1px solid rgba(46,230,166,0.2)}
+.plan ul{list-style:none;margin-bottom:28px}
+.plan ul li{padding:9px 0;color:#666;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;gap:10px}
+.chk{color:#6C2BFF;font-weight:800}
+.plan-btn{width:100%;padding:14px;font-size:14px;font-weight:700;border-radius:100px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s}
+.plan-btn-grad{background:linear-gradient(135deg,#6C2BFF,#2EE6A6);color:#fff}
+.plan-btn-grad:hover{opacity:0.9;transform:translateY(-1px)}
+.plan-btn-out{background:transparent;color:#666;border:1.5px solid rgba(255,255,255,0.08)}
+.plan-btn-out:hover{border-color:rgba(108,43,255,0.4);color:#a78bfa}
+.trial-banner{background:linear-gradient(135deg,rgba(46,230,166,0.08),rgba(46,230,166,0.03));border:1px solid rgba(46,230,166,0.2);border-radius:16px;padding:16px 40px;text-align:center;max-width:580px;margin:0 auto 60px;color:#2EE6A6;font-size:15px;font-weight:600}
+
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1100px;margin:0 auto}
+.testi{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:20px;padding:30px;transition:all 0.3s}
+.testi:hover{border-color:rgba(108,43,255,0.2);transform:translateY(-2px)}
+.stars{color:#f59e0b;font-size:13px;margin-bottom:14px;letter-spacing:2px}
+.testi p{color:#555;font-size:14px;line-height:1.8;margin-bottom:20px}
+.author{display:flex;align-items:center;gap:10px}
+.ava{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#6C2BFF,#2EE6A6);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+.author strong{display:block;font-size:13px;font-weight:700}
+.author span{color:#333;font-size:12px}
+
+.faq-list{max-width:680px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.04);padding:26px 0}
+.faq-item h4{font-size:16px;font-weight:600;margin-bottom:10px;color:#ddd}
+.faq-item p{color:#444;font-size:14px;line-height:1.7}
+
+.cta-sec{text-align:center;padding:100px 20px;position:relative;overflow:hidden;background:#060612}
+.cta-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(108,43,255,0.1),transparent);pointer-events:none}
+.cta-sec h2{font-family:'Syne',sans-serif;font-size:48px;font-weight:900;margin-bottom:18px;letter-spacing:-2px;position:relative}
+.cta-sec p{color:#444;font-size:17px;max-width:450px;margin:0 auto 44px;line-height:1.7;position:relative}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#6C2BFF,#2EE6A6);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;z-index:999;transform:translateY(100%);transition:transform 0.3s ease;box-shadow:0 -4px 30px rgba(108,43,255,0.4)}
+.sticky-cta span{font-size:15px;font-weight:700;color:#fff}
+.sticky-close{background:rgba(255,255,255,0.2);color:#fff;border:none;padding:9px 22px;border-radius:100px;font-weight:800;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif}
+
+footer{background:#030309;border-top:1px solid rgba(255,255,255,0.04);padding:70px 40px 40px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto 50px}
+.foot-brand p{color:#333;font-size:13px;line-height:1.7;margin-top:12px;max-width:220px}
+.foot-col h4{font-size:11px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px}
+.foot-col a{display:block;color:#2a2a2a;text-decoration:none;font-size:13px;margin-bottom:10px;transition:color 0.2s}
+.foot-col a:hover{color:#a78bfa}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;color:#1a1a1a;font-size:12px;border-top:1px solid rgba(255,255,255,0.03);padding-top:24px;max-width:1100px;margin:0 auto}
+
+@media(max-width:768px){
+.hero h1{font-size:38px;letter-spacing:-1px}
+.nav-links{display:none}
+.hero-stats{gap:30px}
+.sec-title{font-size:30px}
+.cta-sec h2{font-size:34px}
+.foot-grid{grid-template-columns:1fr 1fr}
+.foot-brand{grid-column:1/-1}
+.btn-signup,.btn-login{padding:9px 16px;font-size:13px}
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo">ClipAI</div>
+  <a href="/" class="logo-wrap">
+    <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" width="70" height="35" class="logo-svg">
+      <defs>
+        <linearGradient id="grad6" x1="0%" y1="50%" x2="100%" y2="50%">
+          <stop offset="0%" stop-color="#6C2BFF"/>
+          <stop offset="100%" stop-color="#2EE6A6"/>
+        </linearGradient>
+        <filter id="glow2">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <path d="M120 200 Q60 150 120 100 L420 100 L300 200 L480 200"
+        stroke="url(#grad6)" stroke-width="18" fill="none"
+        filter="url(#glow2)" stroke-linecap="round"
+        stroke-dasharray="800" stroke-dashoffset="0">
+        <animate attributeName="stroke-dashoffset" from="800" to="0" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </svg>
+    <span class="logo-name">ClipZen AI</span>
+  </a>
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#how-it-works">How It Works</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
   </div>
-  <div>
-    <button class="btn btn-outline">Login</button>
-    <button class="btn btn-primary">Start Free Trial</button>
+  <div class="nav-btns">
+    <button class="btn-signup">Sign Up</button>
+    <span class="slash">/</span>
+    <button class="btn-login">Login</button>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="badge">🔥 10x Faster Than Manual Editing</div>
-  <h1>Turn Any Long Video Into<br><span>Viral Short Clips</span></h1>
-  <p>AI automatically finds your best moments, adds perfect captions, and exports vertical video for TikTok, Reels & Shorts — in minutes, not hours.</p>
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+  <div class="badge"><div class="badge-dot"></div>🔥 10x Faster Than Manual Editing</div>
+  <h1>Turn Any Long Video Into<br><span class="grad">Viral Short Clips</span></h1>
+  <p>AI automatically finds your best moments, adds perfect synchronized captions, and exports vertical video for TikTok, Reels & Shorts — in minutes, not hours.</p>
   <div class="hero-btns">
-    <button class="btn btn-primary" style="font-size:18px;padding:18px 48px">Start Free — 3 Days Free Trial</button>
-    <button class="btn btn-outline" style="font-size:18px;padding:18px 48px">▶ Watch Demo</button>
+    <button class="btn-main">Start Free — 3 Days Free Trial</button>
+    <button class="btn-watch">▶ Watch Demo</button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="num">10x</div><div class="lbl">Faster than editing</div></div>
+    <div class="stat"><div class="num">50+</div><div class="lbl">Languages supported</div></div>
+    <div class="stat"><div class="num">98%</div><div class="lbl">Caption accuracy</div></div>
+    <div class="stat"><div class="num">5min</div><div class="lbl">Average processing</div></div>
   </div>
 </section>
 
-<section class="works-with">
-  <p>Works with videos from</p>
-  <div class="platforms">
-    <div class="platform">🎙️ Podcasts</div>
-    <div class="platform">📺 YouTube</div>
-    <div class="platform">🎤 Interviews</div>
-    <div class="platform">📚 Lectures</div>
-    <div class="platform">💼 Webinars</div>
-    <div class="platform">🎬 Any MP4</div>
+<section class="platforms">
+  <p>Works with any video from</p>
+  <div class="ptags">
+    <div class="ptag">🎙️ Podcasts</div>
+    <div class="ptag">📺 YouTube Videos</div>
+    <div class="ptag">🎤 Interviews</div>
+    <div class="ptag">📚 Lectures</div>
+    <div class="ptag">💼 Webinars</div>
+    <div class="ptag">🎬 Any MP4/MOV</div>
+    <div class="ptag">📱 Zoom Recordings</div>
   </div>
 </section>
 
-<section class="features" id="features">
-  <div class="section-title">Everything You Need To Go Viral</div>
-  <div class="section-sub">One tool. Infinite clips. Zero editing skills required.</div>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="icon">🎯</div>
-      <h3>AI Hook Finder</h3>
-      <p>Our AI watches your entire video and identifies the most engaging 30-90 second moments guaranteed to stop the scroll.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">📝</div>
-      <h3>Perfect Auto Captions</h3>
-      <p>Word-by-word synchronized captions with custom fonts, colors, and styles. 50+ languages supported.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">📱</div>
-      <h3>Vertical Video Export</h3>
-      <p>Perfectly framed 9:16 vertical clips ready for TikTok, Instagram Reels, YouTube Shorts, and more.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">⚡</div>
-      <h3>Lightning Fast</h3>
-      <p>Get 10 clips from a 1-hour video in under 5 minutes. Faster than any human editor.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">🎨</div>
-      <h3>Custom Branding</h3>
-      <p>Add your logo, brand colors, and custom templates to every clip automatically.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">📊</div>
-      <h3>Performance Analytics</h3>
-      <p>Track which clips perform best. AI learns your style and improves recommendations over time.</p>
-    </div>
+<section class="section alt" id="features">
+  <div class="sec-label">Features</div>
+  <div class="sec-title">Everything You Need To Go Viral</div>
+  <div class="sec-sub">One tool. Infinite clips. Zero editing skills required.</div>
+  <div class="feat-grid">
+    <div class="feat-card"><div class="feat-icon">🎯</div><h3>AI Hook Finder</h3><p>Our AI watches your entire video and identifies the most engaging 30-90 second moments guaranteed to stop the scroll.</p></div>
+    <div class="feat-card"><div class="feat-icon">📝</div><h3>Perfect Auto Captions</h3><p>Word-by-word synchronized captions with custom fonts, colors, and styles. 50+ languages with 98% accuracy.</p></div>
+    <div class="feat-card"><div class="feat-icon">📱</div><h3>Vertical Video Export</h3><p>Perfectly framed 9:16 vertical clips ready for TikTok, Instagram Reels, YouTube Shorts instantly.</p></div>
+    <div class="feat-card"><div class="feat-icon">⚡</div><h3>Lightning Fast</h3><p>Get 10 clips from a 1-hour video in under 5 minutes. Faster than any human editor.</p></div>
+    <div class="feat-card"><div class="feat-icon">🎨</div><h3>100+ Caption Templates</h3><p>Professional caption templates used by top creators. Match your brand perfectly every time.</p></div>
+    <div class="feat-card"><div class="feat-icon">📊</div><h3>Performance Analytics</h3><p>Track which clips perform best. AI learns your style and improves recommendations over time.</p></div>
   </div>
 </section>
 
-<section class="how-it-works" id="how-it-works">
-  <div class="section-title">How It Works</div>
-  <div class="section-sub">Three simple steps to viral content</div>
+<section class="section" id="how-it-works">
+  <div class="sec-label">How It Works</div>
+  <div class="sec-title">Three Steps To Viral Content</div>
+  <div class="sec-sub">From upload to ready-to-post in minutes.</div>
   <div class="steps">
-    <div class="step">
-      <div class="number">1</div>
-      <h3>Upload Your Video</h3>
-      <p>Upload any long video or paste a YouTube URL. We support all major formats.</p>
-    </div>
-    <div class="step">
-      <div class="number">2</div>
-      <h3>AI Finds Best Moments</h3>
-      <p>Our AI analyzes your content and identifies the most viral-worthy clips automatically.</p>
-    </div>
-    <div class="step">
-      <div class="number">3</div>
-      <h3>Download & Post</h3>
-      <p>Download your clips with captions ready to post on any platform instantly.</p>
-    </div>
+    <div class="step"><div class="step-num">1</div><h3>Upload Your Video</h3><p>Upload any long video or paste a YouTube URL. We support all major formats.</p></div>
+    <div class="step"><div class="step-num">2</div><h3>AI Finds Best Moments</h3><p>Our AI analyzes your content and automatically identifies the most viral-worthy clips.</p></div>
+    <div class="step"><div class="step-num">3</div><h3>Download & Post</h3><p>Download vertical clips with perfect captions. Ready to post on any platform instantly.</p></div>
   </div>
 </section>
 
-<section class="pricing" id="pricing">
-  <div class="section-title">Simple, Transparent Pricing</div>
-  <div class="section-sub">Start free. No credit card required.</div>
-  <div class="trial-banner">🎁 3-Day Free Trial — Up to 7 Clips — No Credit Card Needed</div>
+<section class="section alt" id="pricing">
+  <div class="sec-label">Pricing</div>
+  <div class="sec-title">Simple Transparent Pricing</div>
+  <div class="sec-sub">Start free. Scale as you grow. Cancel anytime.</div>
+  <div class="trial-banner">🎁 3-Day Free Trial — Up to 7 Clips — No Credit Card Required</div>
   <div class="pricing-grid">
     <div class="plan">
-      <div class="plan-name">Starter</div>
-      <div class="price">$19<span>/mo</span></div>
-      <div class="clips-badge">15 clips/month</div>
+      <div class="plan-tier">Starter</div>
+      <div class="plan-price">$19<span>/mo</span></div>
+      <div class="plan-clips">15 clips/month</div><br>
+      <div class="plan-templates">25 caption templates</div>
       <ul>
-        <li>15 video clips per month</li>
-        <li>Auto captions</li>
-        <li>AI hook finder</li>
-        <li>Vertical export</li>
-        <li>Email support</li>
+        <li><span class="chk">✓</span>15 video clips per month</li>
+        <li><span class="chk">✓</span>25 caption templates</li>
+        <li><span class="chk">✓</span>Auto captions</li>
+        <li><span class="chk">✓</span>AI hook finder</li>
+        <li><span class="chk">✓</span>Vertical export</li>
+        <li><span class="chk">✓</span>Email support</li>
       </ul>
-      <button class="btn btn-outline">Get Started</button>
+      <button class="plan-btn plan-btn-out">Get Started</button>
     </div>
-    <div class="plan popular">
-      <div class="popular-badge">⚡ MOST POPULAR</div>
-      <div class="plan-name">Pro</div>
-      <div class="price">$49<span>/mo</span></div>
-      <div class="clips-badge">35 clips/month</div>
+    <div class="plan hot">
+      <div class="hot-badge">⚡ MOST POPULAR</div>
+      <div class="plan-tier">Pro</div>
+      <div class="plan-price">$49<span>/mo</span></div>
+      <div class="plan-clips">35 clips/month</div><br>
+      <div class="plan-templates">45+ caption templates</div>
       <ul>
-        <li>35 video clips per month</li>
-        <li>Auto captions</li>
-        <li>AI hook finder</li>
-        <li>Vertical export</li>
-        <li>Priority support</li>
-        <li>Analytics dashboard</li>
-        <li>Custom branding</li>
+        <li><span class="chk">✓</span>35 video clips per month</li>
+        <li><span class="chk">✓</span>45+ caption templates</li>
+        <li><span class="chk">✓</span>Auto captions</li>
+        <li><span class="chk">✓</span>AI hook finder</li>
+        <li><span class="chk">✓</span>Priority support</li>
+        <li><span class="chk">✓</span>Analytics dashboard</li>
+        <li><span class="chk">✓</span>Custom branding</li>
       </ul>
-      <button class="btn btn-primary">Get Started</button>
-    </div>
-    <div class="plan">
-      <div class="plan-name">Growth</div>
-      <div class="price">$79<span>/mo</span></div>
-      <div class="clips-badge">50 clips/month</div>
-      <ul>
-        <li>50 video clips per month</li>
-        <li>Auto captions</li>
-        <li>AI hook finder</li>
-        <li>Vertical export</li>
-        <li>Priority support</li>
-        <li>Advanced analytics</li>
-        <li>Team collaboration</li>
-        <li>Custom templates</li>
-      </ul>
-      <button class="btn btn-outline">Get Started</button>
+      <button class="plan-btn plan-btn-grad">Get Started</button>
     </div>
     <div class="plan">
-      <div class="plan-name">Agency</div>
-      <div class="price">$249<span>/mo</span></div>
-      <div class="clips-badge">Unlimited clips</div>
+      <div class="plan-tier">Growth</div>
+      <div class="plan-price">$79<span>/mo</span></div>
+      <div class="plan-clips">50 clips/month</div><br>
+      <div class="plan-templates">60+ caption templates</div>
       <ul>
-        <li>Unlimited clips</li>
-        <li>White label</li>
-        <li>API access</li>
-        <li>Unlimited team seats</li>
-        <li>Dedicated support</li>
-        <li>Custom integrations</li>
-        <li>SLA guarantee</li>
-        <li>Onboarding call</li>
+        <li><span class="chk">✓</span>50 video clips per month</li>
+        <li><span class="chk">✓</span>60+ caption templates</li>
+        <li><span class="chk">✓</span>Auto captions</li>
+        <li><span class="chk">✓</span>AI hook finder</li>
+        <li><span class="chk">✓</span>Advanced analytics</li>
+        <li><span class="chk">✓</span>Team collaboration</li>
+        <li><span class="chk">✓</span>Custom templates</li>
       </ul>
-      <button class="btn btn-outline">Contact Sales</button>
+      <button class="plan-btn plan-btn-out">Get Started</button>
+    </div>
+    <div class="plan">
+      <div class="plan-tier">Agency</div>
+      <div class="plan-price">$249<span>/mo</span></div>
+      <div class="plan-clips">Unlimited clips</div><br>
+      <div class="plan-templates">All templates + custom</div>
+      <ul>
+        <li><span class="chk">✓</span>Unlimited clips</li>
+        <li><span class="chk">✓</span>All 100+ templates</li>
+        <li><span class="chk">✓</span>White label</li>
+        <li><span class="chk">✓</span>API access</li>
+        <li><span class="chk">✓</span>Unlimited team seats</li>
+        <li><span class="chk">✓</span>Dedicated support</li>
+        <li><span class="chk">✓</span>SLA guarantee</li>
+      </ul>
+      <button class="plan-btn plan-btn-out">Contact Sales</button>
     </div>
   </div>
 </section>
 
-<section class="testimonials">
-  <div class="section-title">Loved By Creators</div>
-  <div class="section-sub">Join thousands of creators growing faster with ClipAI</div>
-  <div class="testimonials-grid">
-    <div class="testimonial">
-      <div class="stars">★★★★★</div>
-      <p>"I used to spend 4 hours editing clips manually. Now ClipAI does it in 5 minutes. It's insane how good the AI is at finding the best moments."</p>
-      <div class="author">
-        <div class="avatar">S</div>
-        <div class="author-info"><strong>Sarah M.</strong><span>Podcast Host — 50K followers</span></div>
-      </div>
-    </div>
-    <div class="testimonial">
-      <div class="stars">★★★★★</div>
-      <p>"My YouTube channel grew 300% after I started posting clips made with ClipAI. The captions are perfect and it saves me so much time."</p>
-      <div class="author">
-        <div class="avatar">R</div>
-        <div class="author-info"><strong>Raj K.</strong><span>Tech YouTuber — 120K subscribers</span></div>
-      </div>
-    </div>
-    <div class="testimonial">
-      <div class="stars">★★★★★</div>
-      <p>"As a marketing agency we use ClipAI for all our clients. The white label feature is perfect and the quality is consistently professional."</p>
-      <div class="author">
-        <div class="avatar">A</div>
-        <div class="author-info"><strong>Alex T.</strong><span>Marketing Agency Owner</span></div>
-      </div>
-    </div>
+<section class="section" id="testimonials">
+  <div class="sec-label">Testimonials</div>
+  <div class="sec-title">Loved By Creators</div>
+  <div class="sec-sub">Join thousands growing faster with ClipZen AI</div>
+  <div class="testi-grid">
+    <div class="testi"><div class="stars">★★★★★</div><p>"I used to spend 4 hours editing clips manually. Now ClipZen AI does it in 5 minutes. The AI is insane at finding viral moments."</p><div class="author"><div class="ava">S</div><div><strong>Sarah M.</strong><span>Podcast Host — 50K followers</span></div></div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>"My YouTube channel grew 300% after I started using ClipZen AI. The captions are perfect and save me hours every week."</p><div class="author"><div class="ava">R</div><div><strong>Raj K.</strong><span>Tech YouTuber — 120K subscribers</span></div></div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>"As a marketing agency we use ClipZen AI for all our clients. White label is perfect and quality is consistently professional."</p><div class="author"><div class="ava">A</div><div><strong>Alex T.</strong><span>Marketing Agency Owner</span></div></div></div>
   </div>
 </section>
 
-<section class="faq" id="faq">
-  <div class="section-title">Frequently Asked Questions</div>
+<section class="section alt" id="faq">
+  <div class="sec-label">FAQ</div>
+  <div class="sec-title">Frequently Asked Questions</div>
   <div class="faq-list">
-    <div class="faq-item">
-      <h4>What types of videos does ClipAI support?</h4>
-      <p>ClipAI works with any long-form video including podcasts, YouTube videos, interviews, lectures, webinars, and any MP4 file. If it's longer than 5 minutes, we can clip it.</p>
-    </div>
-    <div class="faq-item">
-      <h4>How accurate are the auto-captions?</h4>
-      <p>Our AI achieves 98%+ accuracy in English and supports 50+ languages. Captions are perfectly synchronized word by word.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Do I need a credit card for the free trial?</h4>
-      <p>No! Start your 3-day free trial with up to 7 clips completely free. No credit card required until you decide to upgrade.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Can I cancel anytime?</h4>
-      <p>Yes, cancel anytime with no questions asked. Your subscription continues until the end of the billing period.</p>
-    </div>
-    <div class="faq-item">
-      <h4>What platforms can I export to?</h4>
-      <p>Export vertical clips perfectly sized for TikTok, Instagram Reels, YouTube Shorts, Twitter/X, LinkedIn, and more.</p>
-    </div>
+    <div class="faq-item"><h4>What types of videos does ClipZen AI support?</h4><p>Any long-form video including podcasts, YouTube videos, interviews, lectures, webinars, Zoom recordings, and any MP4 or MOV file.</p></div>
+    <div class="faq-item"><h4>How accurate are the auto-captions?</h4><p>98%+ accuracy in English. Supports 50+ languages with word-by-word synchronization.</p></div>
+    <div class="faq-item"><h4>Do I need a credit card for the free trial?</h4><p>No! Start your 3-day free trial with up to 7 clips completely free. No credit card required.</p></div>
+    <div class="faq-item"><h4>Can I cancel anytime?</h4><p>Yes, cancel anytime with no questions asked. Your subscription continues until end of billing period.</p></div>
+    <div class="faq-item"><h4>What platforms can I export to?</h4><p>TikTok, Instagram Reels, YouTube Shorts, Twitter/X, LinkedIn, Snapchat, and more.</p></div>
   </div>
 </section>
 
-<section class="cta-section">
+<section class="cta-sec">
+  <div class="cta-glow"></div>
   <h2>Ready To Go Viral?</h2>
-  <p>Start your free trial today. No credit card required.</p>
-  <button class="btn btn-primary" style="font-size:20px;padding:20px 60px">Start Free Trial — 3 Days Free</button>
+  <p>Start your free trial today. No credit card required. Cancel anytime.</p>
+  <button class="btn-main" style="font-size:17px;padding:18px 52px">Start Free Trial — 3 Days Free</button>
 </section>
 
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo">ClipAI</div>
-      <p>Turn any long video into viral short clips with the power of AI.</p>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="/" class="logo-wrap">
+        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" width="60" height="30">
+          <defs>
+            <linearGradient id="grad7" x1="0%" y1="50%" x2="100%" y2="50%">
+              <stop offset="0%" stop-color="#6C2BFF"/>
+              <stop offset="100%" stop-color="#2EE6A6"/>
+            </linearGradient>
+            <filter id="glow3"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <path d="M120 200 Q60 150 120 100 L420 100 L300 200 L480 200" stroke="url(#grad7)" stroke-width="18" fill="none" filter="url(#glow3)" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-name">ClipZen AI</span>
+      </a>
+      <p>Turn any long video into viral short clips with the power of AI. Built for creators, podcasters, and agencies.</p>
     </div>
-    <div class="footer-col">
-      <h4>Product</h4>
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#">Changelog</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="#">About</a>
-      <a href="#">Blog</a>
-      <a href="#">Careers</a>
-      <a href="#">Press</a>
-    </div>
-    <div class="footer-col">
-      <h4>Support</h4>
-      <a href="#faq">FAQ</a>
-      <a href="#">Contact</a>
-      <a href="#">Documentation</a>
-      <a href="#">Status</a>
-    </div>
-    <div class="footer-col">
-      <h4>Legal</h4>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Cookie Policy</a>
-      <a href="#">GDPR</a>
-    </div>
+    <div class="foot-col"><h4>Product</h4><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#how-it-works">How It Works</a><a href="#">Changelog</a></div>
+    <div class="foot-col"><h4>Company</h4><a href="#">About</a><a href="#">Blog</a><a href="#">Careers</a><a href="#">Press</a></div>
+    <div class="foot-col"><h4>Support</h4><a href="#faq">FAQ</a><a href="#">Contact</a><a href="#">Docs</a><a href="#">Status</a></div>
+    <div class="foot-col"><h4>Legal</h4><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a><a href="#">GDPR</a></div>
   </div>
-  <div class="footer-bottom">© 2026 ClipAI. All rights reserved. Built with AI. Made for Creators.</div>
+  <div class="foot-bottom"><span>© 2026 ClipZen AI. All rights reserved.</span><span>Built with AI. Made for Creators.</span></div>
 </footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <span>🚀 Start your free trial today!</span>
+  <button class="sticky-close" onclick="document.getElementById('stickyCta').style.transform='translateY(100%)'">Start Free →</button>
+</div>
+
+<script>
+window.addEventListener('scroll',function(){
+  var c=document.getElementById('stickyCta');
+  if(window.scrollY>500){c.style.transform='translateY(0)'}
+  else{c.style.transform='translateY(100%)'}
+});
+</script>
 
 </body>
 </html>
