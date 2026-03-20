@@ -112,9 +112,9 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:14px 2
 
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 @keyframes scaleBtn{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-.sticky-cta{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(200px);background:rgba(6,6,18,0.95);border:1px solid rgba(108,43,255,0.3);padding:10px 10px 10px 18px;display:flex;align-items:center;gap:12px;z-index:999;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 8px 40px rgba(108,43,255,0.3);border-radius:100px;white-space:nowrap;backdrop-filter:blur(20px);max-width:90vw}
-.sticky-cta span{font-size:13px;font-weight:600;color:#aaa}
-.sticky-close{background:linear-gradient(135deg,#6C2BFF,#2EE6A6);color:#fff;border:none;padding:10px 20px;border-radius:100px;font-weight:700;font-size:13px;cursor:pointer;font-family:'Inter',sans-serif;animation:scaleBtn 2.5s ease infinite}
+.sticky-cta{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(200px);background:rgba(6,6,18,0.95);border:1px solid rgba(108,43,255,0.3);padding:12px 12px 12px 24px;display:flex;align-items:center;gap:14px;z-index:999;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 8px 40px rgba(108,43,255,0.3);border-radius:100px;white-space:nowrap;backdrop-filter:blur(20px)}
+.sticky-cta span{font-size:14px;font-weight:600;color:#aaa}
+.sticky-close{background:linear-gradient(135deg,#6C2BFF,#2EE6A6);color:#fff;border:none;padding:11px 24px;border-radius:100px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;animation:scaleBtn 2.5s ease infinite}
 .sticky-cta.show{transform:translateX(-50%) translateY(0)}
 
 footer{background:#030309;border-top:1px solid rgba(255,255,255,0.04);padding:70px 40px 40px}
@@ -125,16 +125,6 @@ footer{background:#030309;border-top:1px solid rgba(255,255,255,0.04);padding:70
 .foot-col a:hover{color:#a78bfa}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;color:#1a1a1a;font-size:12px;border-top:1px solid rgba(255,255,255,0.03);padding-top:24px;max-width:1100px;margin:0 auto}
 
-@media(min-width:1024px){
-.hero h1{font-size:80px}
-.hero p{font-size:20px}
-.sec-title{font-size:52px}
-.plan-price{font-size:56px}
-.stat .num{font-size:42px}
-.feat-card{padding:40px}
-nav{padding:18px 60px}
-.hero{padding:120px 40px}
-}
 @media(max-width:768px){
 .hero h1{font-size:38px;letter-spacing:-1px}
 .nav-links{display:none}
@@ -191,7 +181,7 @@ nav{padding:18px 60px}
   <h1>Turn Any Long Video Into<br><span class="grad">Viral Short Clips</span></h1>
   <p>AI automatically finds your best moments, adds perfect synchronized captions, and exports vertical video for TikTok, Reels & Shorts — in minutes, not hours.</p>
   <div class="hero-btns">
-    <button class="btn-main">🚀 Start Free — 3 Days Free Trial</button>
+    <button class="btn-main">Start Free — 3 Days Free Trial</button>
     <button class="btn-watch">▶ Watch Demo</button>
   </div>
   <div class="hero-stats">
@@ -340,7 +330,7 @@ nav{padding:18px 60px}
   <div class="cta-glow"></div>
   <h2>Ready To Go Viral?</h2>
   <p>Start your free trial today. No credit card required. Cancel anytime.</p>
-  <button class="btn-main" style="font-size:17px;padding:18px 52px">🚀 Start Free Trial — 3 Days Free</button>
+  <button class="btn-main" style="font-size:17px;padding:18px 52px">Start Free Trial — 3 Days Free</button>
 </section>
 
 <footer>
@@ -370,8 +360,8 @@ nav{padding:18px 60px}
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <span>🚀 Start free trial</span>
-  <button class="sticky-close" onclick="this.closest('.sticky-cta').classList.remove('show')">🚀 Start Free →</button>
+  <span>🚀 Start your free trial today!</span>
+  <button class="sticky-close" onclick="this.closest('.sticky-cta').classList.remove('show')">Start Free →</button>
 </div>
 
 <script>
