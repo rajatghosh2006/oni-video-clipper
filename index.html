@@ -169,18 +169,17 @@ footer{background:#030305;border-top:1px solid rgba(255,255,255,0.05);padding:80
 <nav>
   <a href="/" class="logo-container">
     <div class="logo-icon">
-      <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(99,102,241,0.6))">
+      <svg viewBox="0 0 60 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 12px rgba(99,102,241,0.8))">
   <defs>
-    <linearGradient id="czgrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8b5cf6"/>
-      <stop offset="50%" style="stop-color:#6366f1"/>
+    <linearGradient id="czg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="40%" style="stop-color:#6366f1"/>
+      <stop offset="70%" style="stop-color:#22d3ee"/>
       <stop offset="100%" style="stop-color:#06b6d4"/>
     </linearGradient>
   </defs>
-  <!-- C shape -->
-  <path d="M32 10 C20 10 12 17 12 25 C12 33 20 40 32 40" stroke="url(#czgrad)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
-  <!-- Z shape -->
-  <path d="M22 10 L38 10 L22 40 L38 40" stroke="url(#czgrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M42 8 C28 8 16 16 16 25 C16 34 28 42 42 42" stroke="url(#czg)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M24 8 L48 8 L24 42 L48 42" stroke="url(#czg)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>
     </div>
     <span class="logo-text">ClipZen<span> AI</span></span>
@@ -191,12 +190,13 @@ footer{background:#030305;border-top:1px solid rgba(255,255,255,0.05);padding:80
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
   </div>
-  <div class="nav-right" style="display:flex;align-items:center;gap:0">
-    <button class="btn btn-ghost" style="border-radius:100px;padding:10px 24px;font-size:14px">Sign Up</button>
-    <span style="color:#333;font-size:20px;font-weight:300;margin:0 2px">/</span>
-    <button class="btn btn-ghost" style="border-radius:100px;padding:10px 24px;font-size:14px">Login</button>
-  </div>
+  <div class="nav-right"></div>
 </nav>
+<div style="display:flex;align-items:center;justify-content:center;gap:16px;padding:16px 20px;background:rgba(5,5,8,0.95);border-bottom:1px solid rgba(99,102,241,0.1)">
+  <button style="background:rgba(99,102,241,0.15);color:#fff;border:none;padding:12px 40px;border-radius:100px;font-size:16px;font-weight:700;cursor:pointer;font-family:Inter,sans-serif;backdrop-filter:blur(10px)">Sign Up</button>
+  <span style="color:#6366f1;font-size:28px;font-weight:200">/</span>
+  <button style="background:rgba(99,102,241,0.15);color:#fff;border:none;padding:12px 40px;border-radius:100px;font-size:16px;font-weight:700;cursor:pointer;font-family:Inter,sans-serif;backdrop-filter:blur(10px)">Login</button>
+</div>
 <!-- Sticky CTA -->
 <div id="sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#6366f1,#8b5cf6);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;z-index:999;transform:translateY(100%);transition:transform 0.3s ease;box-shadow:0 -4px 30px rgba(99,102,241,0.4)">
   <span style="font-size:15px;font-weight:700">🚀 Start your free trial today!</span>
