@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ClipZen AI — Turn Any Long Video Into Viral Clips</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:#060612;color:#fff;overflow-x:hidden}
@@ -16,7 +16,7 @@ body{font-family:'Inter',sans-serif;background:#060612;color:#fff;overflow-x:hid
 
 .logo-svg{animation:float 3s ease-in-out infinite}
 
-nav{display:flex;justify-content:space-between;align-items:center;padding:14px 40px;background:rgba(6,6,18,0.9);border-bottom:1px solid rgba(108,43,255,0.15);position:sticky;top:0;z-index:1000;backdrop-filter:blur(20px)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(6,6,18,0.9);border-bottom:1px solid rgba(108,43,255,0.15);position:sticky;top:0;z-index:1000;backdrop-filter:blur(20px);flex-wrap:wrap;gap:10px}
 .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:900;background:linear-gradient(135deg,#6C2BFF,#6366f1,#2EE6A6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}
 .nav-links{display:flex;align-items:center;gap:28px}
@@ -43,7 +43,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:14px 4
 .btn-watch{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.15);padding:16px 40px;border-radius:100px;font-size:16px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s}
 .btn-watch:hover{border-color:rgba(108,43,255,0.5)}
 .hero-stats{display:flex;gap:60px;justify-content:center;margin-top:70px;animation:fadeUp 0.6s ease 0.4s both;flex-wrap:wrap}
-.stat .num{font-family:'Syne',sans-serif;font-size:30px;font-weight:900;background:linear-gradient(135deg,#fff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat .num{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;background:linear-gradient(135deg,#fff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .stat .lbl{color:#444;font-size:13px;margin-top:4px}
 
 .platforms{padding:36px 40px;border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);background:#060612}
@@ -76,7 +76,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:14px 4
 .plan.hot{border-color:rgba(108,43,255,0.5);background:linear-gradient(135deg,rgba(108,43,255,0.08),rgba(46,230,166,0.04))}
 .hot-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#6C2BFF,#2EE6A6);color:#fff;padding:5px 18px;border-radius:100px;font-size:11px;font-weight:800;white-space:nowrap;letter-spacing:1px}
 .plan-tier{font-size:11px;color:#444;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
-.plan-price{font-family:'Syne',sans-serif;font-size:48px;font-weight:900;letter-spacing:-2px;line-height:1;margin-bottom:4px}
+.plan-price{font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:700;letter-spacing:-2px;line-height:1;margin-bottom:4px}
 .plan-price span{font-size:16px;color:#444;font-weight:400;letter-spacing:0;font-family:'Inter',sans-serif}
 .plan-clips{display:inline-block;background:rgba(108,43,255,0.1);color:#a78bfa;padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600;margin-bottom:6px;border:1px solid rgba(108,43,255,0.2)}
 .plan-templates{display:inline-block;background:rgba(46,230,166,0.08);color:#2EE6A6;padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600;margin-bottom:24px;border:1px solid rgba(46,230,166,0.2)}
@@ -110,9 +110,11 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:14px 4
 .cta-sec h2{font-family:'Syne',sans-serif;font-size:48px;font-weight:900;margin-bottom:18px;letter-spacing:-2px;position:relative}
 .cta-sec p{color:#444;font-size:17px;max-width:450px;margin:0 auto 44px;line-height:1.7;position:relative}
 
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#6C2BFF,#2EE6A6);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;z-index:999;transform:translateY(100%);transition:transform 0.3s ease;box-shadow:0 -4px 30px rgba(108,43,255,0.4)}
-.sticky-cta span{font-size:15px;font-weight:700;color:#fff}
-.sticky-close{background:rgba(255,255,255,0.2);color:#fff;border:none;padding:9px 22px;border-radius:100px;font-weight:800;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.sticky-cta{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(200%);background:linear-gradient(135deg,#6C2BFF,#2EE6A6);padding:14px 28px;display:flex;align-items:center;gap:16px;z-index:999;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 8px 40px rgba(108,43,255,0.5);border-radius:100px;white-space:nowrap}
+.sticky-cta span{font-size:14px;font-weight:700;color:#fff}
+.sticky-close{background:rgba(255,255,255,0.25);color:#fff;border:none;padding:9px 22px;border-radius:100px;font-weight:800;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;animation:pulse 2s ease infinite}
+.sticky-cta.show{transform:translateX(-50%) translateY(0)}
 
 footer{background:#030309;border-top:1px solid rgba(255,255,255,0.04);padding:70px 40px 40px}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto 50px}
@@ -130,7 +132,7 @@ footer{background:#030309;border-top:1px solid rgba(255,255,255,0.04);padding:70
 .cta-sec h2{font-size:34px}
 .foot-grid{grid-template-columns:1fr 1fr}
 .foot-brand{grid-column:1/-1}
-.btn-signup,.btn-login{padding:9px 16px;font-size:13px}
+.btn-signup,.btn-login{padding:8px 14px;font-size:12px}.nav-btns{order:3;width:100%;justify-content:center}
 }
 </style>
 </head>
@@ -164,7 +166,7 @@ footer{background:#030309;border-top:1px solid rgba(255,255,255,0.04);padding:70
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
   </div>
-  <div class="nav-btns">
+  <div class="nav-btns" style="display:flex;align-items:center;gap:10px">
     <button class="btn-signup">Sign Up</button>
     <span class="slash">/</span>
     <button class="btn-login">Login</button>
@@ -305,9 +307,9 @@ footer{background:#030309;border-top:1px solid rgba(255,255,255,0.04);padding:70
   <div class="sec-title">Loved By Creators</div>
   <div class="sec-sub">Join thousands growing faster with ClipZen AI</div>
   <div class="testi-grid">
-    <div class="testi"><div class="stars">★★★★★</div><p>"I used to spend 4 hours editing clips manually. Now ClipZen AI does it in 5 minutes. The AI is insane at finding viral moments."</p><div class="author"><div class="ava">S</div><div><strong>Sarah M.</strong><span>Podcast Host — 50K followers</span></div></div></div>
-    <div class="testi"><div class="stars">★★★★★</div><p>"My YouTube channel grew 300% after I started using ClipZen AI. The captions are perfect and save me hours every week."</p><div class="author"><div class="ava">R</div><div><strong>Raj K.</strong><span>Tech YouTuber — 120K subscribers</span></div></div></div>
-    <div class="testi"><div class="stars">★★★★★</div><p>"As a marketing agency we use ClipZen AI for all our clients. White label is perfect and quality is consistently professional."</p><div class="author"><div class="ava">A</div><div><strong>Alex T.</strong><span>Marketing Agency Owner</span></div></div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>"I used to spend 4 hours editing clips manually. Now ClipZen AI does it in 5 minutes. The AI is insane at finding viral moments."</p><div class="author"><div class="ava" style="background:linear-gradient(135deg,#6C2BFF,#2EE6A6);font-size:18px">👩</div><div><strong>Sarah M.</strong><span>Podcast Host — 50K followers</span></div></div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>"My YouTube channel grew 300% after I started using ClipZen AI. The captions are perfect and save me hours every week."</p><div class="author"><div class="ava" style="background:linear-gradient(135deg,#2EE6A6,#6C2BFF);font-size:18px">👨</div><div><strong>Raj K.</strong><span>Tech YouTuber — 120K subscribers</span></div></div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>"As a marketing agency we use ClipZen AI for all our clients. White label is perfect and quality is consistently professional."</p><div class="author"><div class="ava" style="background:linear-gradient(135deg,#6366f1,#2EE6A6);font-size:18px">👨‍💼</div><div><strong>Alex T.</strong><span>Marketing Agency Owner</span></div></div></div>
   </div>
 </section>
 
@@ -356,16 +358,25 @@ footer{background:#030309;border-top:1px solid rgba(255,255,255,0.04);padding:70
   <div class="foot-bottom"><span>© 2026 ClipZen AI. All rights reserved.</span><span>Built with AI. Made for Creators.</span></div>
 </footer>
 
-<div class="sticky-cta" id="stickyCta">
+<div class="sticky-cta" id="stickyCta" style="bottom:24px;border-radius:100px">
   <span>🚀 Start your free trial today!</span>
-  <button class="sticky-close" onclick="document.getElementById('stickyCta').style.transform='translateY(100%)'">Start Free →</button>
+  <button class="sticky-close" onclick="this.closest('.sticky-cta').classList.remove('show')">Start Free →</button>
 </div>
 
 <script>
 window.addEventListener('scroll',function(){
   var c=document.getElementById('stickyCta');
-  if(window.scrollY>500){c.style.transform='translateY(0)'}
-  else{c.style.transform='translateY(100%)'}
+  var faq=document.getElementById('faq');
+  var testi=document.getElementById('testimonials');
+  if(!faq||!testi) return;
+  var scrollY=window.scrollY;
+  var testiBottom=testi.offsetTop+testi.offsetHeight;
+  var faqTop=faq.offsetTop;
+  if(scrollY>500 && scrollY<(faqTop-100)){
+    c.classList.add('show');
+  } else {
+    c.classList.remove('show');
+  }
 });
 </script>
 
