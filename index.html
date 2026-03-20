@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ClipZen AI — Turn Any Long Video Into Viral Clips</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:#060612;color:#fff;overflow-x:hidden}
@@ -16,9 +16,9 @@ body{font-family:'Inter',sans-serif;background:#060612;color:#fff;overflow-x:hid
 
 .logo-svg{animation:float 3s ease-in-out infinite}
 
-nav{display:flex;justify-content:space-between;align-items:center;padding:14px 40px;background:rgba(6,6,18,0.9);border-bottom:1px solid rgba(108,43,255,0.15);position:sticky;top:0;z-index:1000;backdrop-filter:blur(20px)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(6,6,18,0.9);border-bottom:1px solid rgba(108,43,255,0.15);position:sticky;top:0;z-index:1000;backdrop-filter:blur(20px);flex-wrap:wrap;gap:10px}
 .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-name{font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;background:linear-gradient(135deg,#6C2BFF,#6366f1,#2EE6A6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}
+.logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:900;background:linear-gradient(135deg,#6C2BFF,#6366f1,#2EE6A6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{color:#666;text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
 .nav-links a:hover{color:#fff}
@@ -126,8 +126,6 @@ footer{background:#030309;border-top:1px solid rgba(255,255,255,0.04);padding:70
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;color:#1a1a1a;font-size:12px;border-top:1px solid rgba(255,255,255,0.03);padding-top:24px;max-width:1100px;margin:0 auto}
 
 @media(min-width:1024px){
-.auth-row button{padding:12px 48px!important;font-size:16px!important}
-
 .hero h1{font-size:80px}
 .hero p{font-size:20px}
 .sec-title{font-size:52px}
@@ -145,12 +143,7 @@ nav{padding:18px 60px}
 .cta-sec h2{font-size:34px}
 .foot-grid{grid-template-columns:1fr 1fr}
 .foot-brand{grid-column:1/-1}
-.nav-links{display:flex}
-@media(max-width:768px){
-.nav-links{display:none}
-.nav-btns{display:flex!important}
-.nav-btns button{padding:8px 14px!important;font-size:12px!important}
-}
+.btn-signup,.btn-login{padding:8px 14px;font-size:12px}.nav-btns{order:3;width:100%;justify-content:center}
 }
 </style>
 </head>
@@ -173,7 +166,7 @@ nav{padding:18px 60px}
         stroke="url(#grad6)" stroke-width="18" fill="none"
         filter="url(#glow2)" stroke-linecap="round"
         stroke-dasharray="800" stroke-dashoffset="0">
-        <animate attributeName="stroke-dashoffset" from="800" to="0" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" from="800" to="0" dur="4s" repeatCount="indefinite"/>
       </path>
     </svg>
     <span class="logo-name">ClipZen AI</span>
@@ -184,12 +177,13 @@ nav{padding:18px 60px}
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
   </div>
-  <div class="nav-btns" style="display:flex;align-items:center;gap:10px">
-    <button style="padding:9px 22px;border-radius:100px;font-size:14px;font-weight:600;background:transparent;color:#a78bfa;border:1.5px solid rgba(108,43,255,0.4);cursor:pointer;font-family:Inter,sans-serif;white-space:nowrap">Sign Up</button>
+  <div class="nav-btns" style="display:flex;align-items:center;gap:8px">
+    <button class="btn-signup" style="padding:9px 20px;border-radius:100px;font-size:14px;font-weight:600;background:transparent;color:#a78bfa;border:1.5px solid rgba(108,43,255,0.4);cursor:pointer;font-family:Inter,sans-serif;transition:all 0.2s">Sign Up</button>
     <span style="color:#6C2BFF;font-size:18px">/</span>
-    <button style="padding:9px 22px;border-radius:100px;font-size:14px;font-weight:600;background:transparent;color:#a78bfa;border:1.5px solid rgba(108,43,255,0.4);cursor:pointer;font-family:Inter,sans-serif;white-space:nowrap">Login</button>
+    <button class="btn-login" style="padding:9px 20px;border-radius:100px;font-size:14px;font-weight:600;background:transparent;color:#a78bfa;border:1.5px solid rgba(108,43,255,0.4);cursor:pointer;font-family:Inter,sans-serif;transition:all 0.2s">Login</button>
   </div>
 </nav>
+
 <section class="hero">
   <div class="hero-glow"></div>
   <div class="hero-grid"></div>
