@@ -26,7 +26,7 @@ body{font-family:'Inter',sans-serif;background:#050508;color:#fff;overflow-x:hid
 .logo-text span{color:#8b5cf6}
 
 /* NAV */
-nav{display:flex;justify-content:space-between;align-items:center;padding:12px 40px;background:rgba(8,8,20,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(99,102,241,0.15);position:sticky;top:0;z-index:1000}
+nav{display:flex;justify-content:space-between;align-items:center;padding:12px 40px;background:#080810;backdrop-filter:blur(20px);border-bottom:1px solid rgba(99,102,241,0.15);position:sticky;top:0;z-index:1000}
 .nav-links{display:flex;align-items:center;gap:32px}
 .nav-links a{color:#888;text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
 .nav-links a:hover{color:#fff}
@@ -166,37 +166,31 @@ footer{background:#030305;border-top:1px solid rgba(255,255,255,0.05);padding:80
 </head>
 <body>
 
-<nav>
-  <a href="/" class="logo-container">
-    <div class="logo-icon" style="background:none;border:none">
-<svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="36" style="filter:drop-shadow(0 0 10px rgba(99,102,241,0.8))">
-  <defs>
-    <linearGradient id="czg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#7c3aed"/>
-      <stop offset="35%" style="stop-color:#6366f1"/>
-      <stop offset="70%" style="stop-color:#22d3ee"/>
-      <stop offset="100%" style="stop-color:#06b6d4"/>
-    </linearGradient>
-  </defs>
-  <path d="M52 7 C35 5 13 14 13 30 C13 46 35 55 52 53" stroke="url(#czg)" stroke-width="5.5" stroke-linecap="round" fill="none"/>
-  <path d="M30 7 L60 7 L30 53 L60 53" stroke="url(#czg)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-</svg>
-</div>
-    <span style="font-family:Syne,Inter,sans-serif;font-size:22px;font-weight:900;background:linear-gradient(135deg,#8b5cf6,#6366f1,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px">ClipZen <span style="font-family:Syne,Inter,sans-serif;background:linear-gradient(135deg,#22d3ee,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900">AI</span></span>
+<nav style="display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:transparent;position:sticky;top:0;z-index:1000;backdrop-filter:blur(20px)">
+  <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+    <svg viewBox="0 0 100 75" fill="none" xmlns="http://www.w3.org/2000/svg" width="52" height="39" style="filter:drop-shadow(0 0 12px rgba(99,102,241,0.9))">
+      <defs>
+        <linearGradient id="czg2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#7c3aed"/>
+          <stop offset="30%" style="stop-color:#6366f1"/>
+          <stop offset="65%" style="stop-color:#22d3ee"/>
+          <stop offset="100%" style="stop-color:#06b6d4"/>
+        </linearGradient>
+      </defs>
+      <path d="M65 8 C42 5 15 17 15 37.5 C15 58 42 70 65 67" stroke="url(#czg2)" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <path d="M35 8 L72 8 L35 67 L72 67" stroke="url(#czg2)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <span style="font-family:Syne,Inter,sans-serif;font-size:22px;font-weight:900;background:linear-gradient(135deg,#8b5cf6,#6366f1,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ClipZen <span style="background:linear-gradient(135deg,#22d3ee,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">AI</span></span>
   </a>
-  <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#how-it-works">How It Works</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div style="display:flex;align-items:center;gap:12px">
+      <button style="background:transparent;color:#a78bfa;border:1.5px solid rgba(139,92,246,0.4);padding:10px 28px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;font-family:Syne,Inter,sans-serif;white-space:nowrap">Sign Up</button>
+      <span style="color:#6366f1;font-size:20px">/</span>
+      <button style="background:transparent;color:#a78bfa;border:1.5px solid rgba(139,92,246,0.4);padding:10px 28px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;font-family:Syne,Inter,sans-serif;white-space:nowrap">Login</button>
+    </div>
   </div>
-  <div class="nav-right"></div>
 </nav>
-<div style="display:flex;align-items:center;justify-content:center;gap:20px;padding:12px 20px;background:transparent">
-  <button style="background:transparent;color:#a78bfa;border:1.5px solid rgba(139,92,246,0.4);padding:11px 36px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:Syne,Inter,sans-serif;white-space:nowrap;transition:all 0.2s;letter-spacing:0.3px">Sign Up</button>
-  <span style="color:#6366f1;font-size:22px;font-weight:200">/</span>
-  <button style="background:transparent;color:#a78bfa;border:1.5px solid rgba(139,92,246,0.4);padding:11px 36px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:Syne,Inter,sans-serif;white-space:nowrap;transition:all 0.2s;letter-spacing:0.3px">Login</button>
-</div>
+
 <!-- Sticky CTA -->
 <div id="sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#6366f1,#8b5cf6);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;z-index:999;transform:translateY(100%);transition:transform 0.3s ease;box-shadow:0 -4px 30px rgba(99,102,241,0.4)">
   <span style="font-size:15px;font-weight:700">🚀 Start your free trial today!</span>
