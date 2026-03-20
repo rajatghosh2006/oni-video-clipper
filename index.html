@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ClipZen AI — Turn Any Long Video Into Viral Clips</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=DM+Sans:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:#060612;color:#fff;overflow-x:hidden}
@@ -126,6 +126,11 @@ footer{background:#030309;border-top:1px solid rgba(255,255,255,0.04);padding:70
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;color:#1a1a1a;font-size:12px;border-top:1px solid rgba(255,255,255,0.03);padding-top:24px;max-width:1100px;margin:0 auto}
 
 @media(min-width:1024px){
+.auth-row{display:none!important}
+.nav-btns{display:flex!important;align-items:center;gap:10px}
+.nav-btns::before{content:'Sign Up';padding:10px 28px;border-radius:100px;font-size:15px;font-weight:500;background:transparent;color:#a78bfa;border:1.5px solid rgba(108,43,255,0.4);cursor:pointer;font-family:'DM Sans',sans-serif}
+.nav-btns::after{content:'Login';padding:10px 28px;border-radius:100px;font-size:15px;font-weight:500;background:transparent;color:#a78bfa;border:1.5px solid rgba(108,43,255,0.4);cursor:pointer;font-family:'DM Sans',sans-serif;margin-left:10px}
+
 .auth-row button{padding:12px 48px!important;font-size:16px!important}
 
 .hero h1{font-size:80px}
@@ -168,7 +173,7 @@ nav{padding:18px 60px}
         stroke="url(#grad6)" stroke-width="18" fill="none"
         filter="url(#glow2)" stroke-linecap="round"
         stroke-dasharray="800" stroke-dashoffset="0">
-        <animate attributeName="stroke-dashoffset" from="800" to="0" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" from="800" to="0" dur="6s" repeatCount="indefinite"/>
       </path>
     </svg>
     <span class="logo-name">ClipZen AI</span>
@@ -181,10 +186,10 @@ nav{padding:18px 60px}
   </div>
   <div class="nav-btns"></div>
 </nav>
-<div style="display:flex;align-items:center;justify-content:center;gap:16px;padding:12px 24px;background:rgba(6,6,18,0.9);border-bottom:1px solid rgba(108,43,255,0.08)">
-  <button style="padding:10px 32px;border-radius:100px;font-size:15px;font-weight:600;background:transparent;color:#a78bfa;border:1.5px solid rgba(108,43,255,0.4);cursor:pointer;font-family:Inter,sans-serif;transition:all 0.2s;white-space:nowrap">Sign Up</button>
+<div class="auth-row" style="display:flex;align-items:center;justify-content:center;gap:16px;padding:12px 24px;background:rgba(6,6,18,0.9);border-bottom:1px solid rgba(108,43,255,0.08)">
+  <button style="padding:10px 32px;border-radius:100px;font-size:15px;font-weight:600;background:transparent;color:#a78bfa;border:1.5px solid rgba(108,43,255,0.4);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;white-space:nowrap">Sign Up</button>
   <span style="color:#6C2BFF;font-size:20px;font-weight:200">/</span>
-  <button style="padding:10px 32px;border-radius:100px;font-size:15px;font-weight:600;background:transparent;color:#a78bfa;border:1.5px solid rgba(108,43,255,0.4);cursor:pointer;font-family:Inter,sans-serif;transition:all 0.2s;white-space:nowrap">Login</button>
+  <button style="padding:10px 32px;border-radius:100px;font-size:15px;font-weight:600;background:transparent;color:#a78bfa;border:1.5px solid rgba(108,43,255,0.4);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;white-space:nowrap">Login</button>
 </div>
 
 <section class="hero">
